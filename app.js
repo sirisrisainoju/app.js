@@ -29,7 +29,7 @@ function makeWebhook(name) {
 }
 
 makeWebhook("webhook");       // 🔘 APP level
-makeWebhook("waba");          // 🟢 WABA level
+makeWebhook("wabaa");          // 🟢 WABA level
 makeWebhook("phonenumber");   // 🔵 PHONE level
 
 app.get("/", (req, res) => {
