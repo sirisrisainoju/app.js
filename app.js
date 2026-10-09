@@ -8,7 +8,7 @@ const VERIFY_TOKEN = process.env.VERIFY_TOKEN || "vibecode";
 
 function makeWebhook(name) {
   // GET = Meta's one-time handshake
-  app.get(/${name}, (req, res) => {
+  app.get(`/${name}`, (req, res) => {
     const mode = req.query["hub.mode"];
     const token = req.query["hub.verify_token"];
     const challenge = req.query["hub.challenge"];
@@ -21,7 +21,7 @@ function makeWebhook(name) {
   });
 
   // POST = the real webhook events
-  app.post(/${name}, (req, res) => {
+  app.post(`/${name}`, (req, res) => {
     console.log(\n========== /${name} ==========);
     console.log(JSON.stringify(req.body, null, 2));
     res.sendStatus(200);
